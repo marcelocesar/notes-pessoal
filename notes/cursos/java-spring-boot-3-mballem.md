@@ -386,7 +386,7 @@ Usa o serviço para buscar a lista de usuários e retorna os dados em forma de l
 
 
 
-## 4 - Refectore DTO (Data Transfer Object)
+## 5 - Refectore DTO (Data Transfer Object)
 
 Um DTO (Data Transfer Object) é um objeto usado para transportar dados entre diferentes partes de uma aplicação, como entre o backend e o frontend ou entre serviços. Ele contém apenas atributos simples (sem lógica de negócios) e serve para desacoplar as camadas de apresentação, negócios e persistência, evitando o envio de informações desnecessárias ou sensíveis. 
 
@@ -444,6 +444,8 @@ public class UsuarioCreateDto {
 }
 
 ```
+
+A anotação ```@Valid``` no argumento do metodo create no UsuarioController, faz a validação do campos com as anotações: @NotBlank, @Email, @Size, etc. Visualizar item 6.
 
 **UsuarioResponseDto**
 ```Java
@@ -503,12 +505,80 @@ public class UsuarioMapper {
         return usuarios.stream().map(user -> toDto(user)).collect(Collectors.toList());
     }
 }
+```
+## 6 - Validação com Bean Validation
+
+O Spring suporta a especificação de validação Jakarta Bean Validation, que permite adicionar anotações de validação nos campos dos objetos de entrada das APIs. Você pode usar anotações como @Valid, @NotNull, @Size, @NotBlank, entre outras, para definir as restrições de validação. Essas anotações podem ser adicionadas aos parâmetros dos métodos dos controladores ou aos campos dos objetos de entrada dos modelos.
 
 
+```Java
+@PostMapping("/users")
+public ResponseEntity<User> create(@Valid @RequestBody User user) {    
+    // ...
+}
+```
+
+O Spring também fornece uma API de validação nativa que pode ser utilizada para realizar validações customizadas. Com a Spring Validator você pode criar classes de validação personalizadas que implementam a interface org.springframework.validation.Validator e definir as regras de validação no método validate(). Em seguida, você pode usar o Validator nos seus controllers para validar os objetos de entrada.
+https://beanvalidation.org/3.0/
+
+
+```Java
+@Component
+public class UserValidator implements Validator {    
+    @Override    
+    public boolean supports(Class<?> clazz) {        
+        return User.class.isAssignableFrom(clazz);    
+    }
+ 
+    @Override    
+    public void validate(Object target, Errors errors) {        
+        User user = (User) target;        
+        if (user.getName() == null || user.getName().isEmpty()) {            
+            errors.rejectValue("name", "NotEmpty", "Name cannot be empty");        
+        }    
+    }
+}
+ 
+@RestControllerpublic class User {    
+    @PostMapping("/api/users")   
+    public ResponseEntity<User> create(@Validated @RequestBody User user, Errors errors) {        
+        if (errors.hasErrors()) {            
+            // Handle validation errors        
+        }        
+        // ...    
+    }
+}
+```
+
+Adiciona a dependencia no pom.xml
+
+```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
 ```
 
 ```Java
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class UsuarioCreateDto {
+
+    @NotBlank
+    @Email(message = "formato do e-mail está invalido", regexp = "^[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,}$")
+    private String username;
+    @NotBlank
+    @Size(min = 6, max = 6)
+    private String password;
+}
+
 ```
 
-```Java
-```
+A anotação ```@Valid``` no argumento do metodo create no UsuarioController, faz a validação do campos com as anotações: @NotBlank, @Email, @Size, etc. 
+https://beanvalidation.org/3.0/
+Na documentação tem mais opçao para validação dos campos.
+
+## 7 - Tratamento de exceção com RestControllerAdvice
