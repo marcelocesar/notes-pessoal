@@ -582,3 +582,58 @@ https://beanvalidation.org/3.0/
 Na documentação tem mais opçao para validação dos campos.
 
 ## 7 - Tratamento de exceção com RestControllerAdvice
+
+## 8 - Documentação comSpring docs, OpenAPI e Swagger
+
+Acessar a documentação:
+https://springdoc.org/
+
+Adicionar a dependência ao projeto no pom.xml.
+
+```xml
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.6.0</version>
+</dependency>
+```
+
+Adicionar as configurações no arquivo ```application.properties```.
+
+```md
+# Springdoc OpenApi 3.1 & Swagger 3
+springdoc.swagger-ui.path=/docs-park.html
+springdoc.api-docs.path=/docs-park
+springdoc.packagesToScan=com.mballem.demoparkapi.web.controller
+```
+
+Criar a classe de configuração ```SpringDocOpenApiConfig``` e adicionar as propriedades da API doc.
+
+```Java
+package com.mballem.demoparkapi.config;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class SpringDocOpenApiConfig {
+
+    @Bean
+    public OpenAPI openAPI() {
+        return new OpenAPI()
+                .info(
+                        new Info()
+                                .title("REST API - Spring Park")
+                                .description("API para gestão de estacionamento de veículos")
+                                .version("v1")
+                                .license(new License().name("Apache 2.0").url("https://www.apache.org/licenses/LICENSE-2.0"))
+                                .contact(new Contact().name("Marcio Ballem").email("marcio@spring-park.com"))
+                );
+    }
+}
+
+```
