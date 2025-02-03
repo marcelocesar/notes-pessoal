@@ -83,3 +83,15 @@ Sobre a entrevista com Edivaldo Santos, recomendo o candidato para a vaga de Sê
 Lívia, bom dia!
 
 Sobre a entrevista com Leandro, não recomendo o candidato para a vaga de Sênior. Ele não apresentou um bom desempenho na entrevista. Apesar de possuir experiência em seu currículo e afirmar que tem conhecimento de algumas tecnologias, durante o teste ele não conseguiu responder perguntas básicas. Recomendo que ele estude mais a parte teórica e prática, incluindo conceitos de Java, princípios SOLID, Programação Orientada a Objetos (POO), Clean Code e Angular, para tentar novamente no futuro.
+
+
+Lívia, bom dia!
+
+Sobre a entrevista com Jurandi Carvalho, recomendo o candidato para a vaga de Pleno/Sênior, com algumas ressalvas. Ele apresentou baixo desempenho na entrevista, apesar de dizer que possue experiência em Java, Spring, JPA e testes unitários. Possui conhecimento em SQL, mas ainda não tem familiaridade com PL/SQL (procedures e triggers). No front-end, ele possui pouca experiência e se considera um Full Stack com foco em back-end (80/20). Ele tem conhecimentos básicos em Angular. Durante o teste, suas respostas foram razoaveis. Ele precisa aprimorar a parte teórica, incluindo conceitos de Java, princípios SOLID, Programação Orientada a Objetos (POO), Clean Code e Angular.
+
+
+
+
+Lívia, bom dia!
+
+Sobre a entrevista do Marcelo Thiago, recomendo o candidato para a vaga de Pleno/Sênior, com algumas ressalvas. Ele apresentou bom desempenho na entrevista, possue experiência em Java, Spring, JPA, JMS, Kafka  e testes unitários. Possui conhecimento em SQL e PL/SQL (procedures e triggers). Possui experiência com Frontend Angular e JSF/JSP e se considera um Full Stack com foco em back-end (70/30). Durante o teste, suas respostas foram boas. Ele precisa aprimorar a parte teórica, incluindo conceitos princípios SOLID, Programação Orientada a Objetos (POO), Clean Code e Angular.
