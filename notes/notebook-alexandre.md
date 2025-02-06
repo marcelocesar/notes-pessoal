@@ -19,8 +19,8 @@ entrada - 558.38
 06 - 210.23 - DEZ/2024
 07 - 210.23 - JAN/2025
 08 - 900,00 - FEV/2025 (conta nubank) Transferencia 20/12/2024
-09 - Tem que pagar R$900,57 (Conta Itau/Nubank)
-10 - 
+09 - 900,00 - MAR/2025 - Tem que pagar R$900,57 (Conta Itau/Nubank)
+10 - 900,00 - ABR/2025 - Tem que pagar R$900,57 (Conta Itau/Nubank)
 11 - 
 12 - 
 13 -

@@ -95,3 +95,16 @@ Sobre a entrevista com Jurandi Carvalho, recomendo o candidato para a vaga de Pl
 Lívia, bom dia!
 
 Sobre a entrevista do Marcelo Thiago, recomendo o candidato para a vaga de Pleno/Sênior, com algumas ressalvas. Ele apresentou bom desempenho na entrevista, possue experiência em Java, Spring, JPA, JMS, Kafka  e testes unitários. Possui conhecimento em SQL e PL/SQL (procedures e triggers). Possui experiência com Frontend Angular e JSF/JSP e se considera um Full Stack com foco em back-end (70/30). Durante o teste, suas respostas foram boas. Ele precisa aprimorar a parte teórica, incluindo conceitos princípios SOLID, Programação Orientada a Objetos (POO), Clean Code e Angular.
+
+
+Debora, boa tarde!
+ 
+Sobre a entrevista do Cristovão, recomendo o candidato para uma vaga de nível pleno, com ressalvas. Ele apresentou bom desempenho na entrevista e, durante o teste, suas respostas foram boas.
+Java: Possui experiência, mas no teste seu desempenho foi razoável.
+Autenticação: Tem experiência com JWT e SSO (Keycloak).
+API RESTful: Possui conhecimentos básicos.
+Teste Unitário: Tem experiência com TDD.
+Angular: Possui o conhecimento necessário para implementação de telas e funcionalidades.
+DevOps: Tem experiência com GitHub Actions e Jenkins.
+Banco de dados: Possui experiência com SQL, mas não tem experiência com Stored Procedures e Tuning de SQL.
+Ressalto a importância de revisar a parte teórica. Ele respondeu corretamente conceitos de POO, como acoplamento e coesão, mas não soube explicar o que é polimorfismo. No Java, foi bem no teste, mas não soube explicar as declarações static e final.
